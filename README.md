@@ -1,6 +1,6 @@
 # Xpense
 
-A new Flutter project.
+A new Flutter project to track and manage personal Expenses.
 
 ## Getting Started
 
