@@ -1,3 +1,4 @@
+import 'Transaction.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,9 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Xpense',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -19,20 +20,17 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+  final List<Transaction> transactions = [
+    Transaction(
+        id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
+    Transaction(
+        id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now())
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,17 +49,19 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Daily charts"),
             ),
           ),
-          Container(
-            color: Colors.blue,
-            child: Card(
-              elevation: 10,
-              child: Text("List of expenses"),
-            ),
+          Column(
+            children: transactions.map(
+              (tx) {
+                return Card(
+                  child: Text(tx.title),
+                );
+              },
+            ).toList(),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+      floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,
+        onPressed: () {},
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
