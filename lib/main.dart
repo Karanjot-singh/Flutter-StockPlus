@@ -1,10 +1,11 @@
 import 'Transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
 }
-//test comment
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -49,18 +50,60 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Daily charts"),
             ),
           ),
+          //For a list of Past transactions
           Column(
             children: transactions.map(
               (tx) {
                 return Card(
-                  child: Text(tx.title),
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          "\₹ "+tx.amount.toString(),
+                          style: TextStyle(
+                            color: Colors.purple[400],
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        padding: EdgeInsets.all(10),
+
+                        // decoration: BoxDecoration(
+                        //     border:
+                        //         Border.all(color: Colors.grey[850], width: 2)),
+                        margin:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          Text(
+                            DateFormat.yMMMd().format(tx.date),
+                            style: TextStyle(
+                              color: Colors.grey[850],
+                              fontSize: 12,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 );
               },
             ).toList(),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
         onPressed: () {},
         tooltip: 'Increment',
         child: Icon(Icons.add),
