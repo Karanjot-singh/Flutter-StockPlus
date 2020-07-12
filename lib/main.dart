@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Xpense"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
@@ -50,6 +50,32 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Daily charts"),
             ),
           ),
+          Card(
+            child: Container(
+              child: Column(
+                crossAxisAlignment:CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      labelText: "Title",
+                    ),
+                  ),
+                  TextField(
+                    autofocus: true,
+                    decoration: InputDecoration(labelText: "Amount"),
+                  ),
+                  FlatButton(
+                    onPressed: () {},
+                    color: Colors.purple,
+                    child: Text("Add Transaction"),
+                    
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           //For a list of Past transactions
           Column(
             children: transactions.map(
@@ -59,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: <Widget>[
                       Container(
                         child: Text(
-                          "\₹ "+tx.amount.toString(),
+                          "\₹ " + tx.amount.toString(),
                           style: TextStyle(
                             color: Colors.purple[400],
                             fontSize: 20,
@@ -80,10 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(
                             tx.title,
                             style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold
-                            ),
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(
                             DateFormat.yMMMd().format(tx.date),
@@ -102,12 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.red,
+      //   onPressed: () {},
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.add),
+      // ),
     );
   }
 }
