@@ -33,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
         id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now())
   ];
   @override
+  String titleInput, amountInput;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment:CrossAxisAlignment.end,
                 children: <Widget>[
                   TextField(
-                    autofocus: true,
+                    autofocus: true, onChanged:(value) => amountInput=value,
                     decoration: InputDecoration(
                       labelText: "Title",
                     ),
