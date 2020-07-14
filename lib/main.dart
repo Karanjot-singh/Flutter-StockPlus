@@ -20,9 +20,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   
-  // String titleInput, amountInput;
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,36 +37,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 10,
               child: Text("Daily charts"),
             ),
-          ),
-          Card(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  TextField(
-                    autofocus: true,
-                    // onChanged: (value) => titleInput = value,
-                    controller: titleController,
-                    decoration: InputDecoration(
-                      labelText: "Title",
-                    ),
-                  ),
-                  TextField(
-                    autofocus: true,
-                    // decoration: InputDecoration(labelText: "Amount"),
-                    controller: amountController,
-                    // onChanged: (value) => amountInput = value,
-                  ),
-                  FlatButton(
-                    onPressed: () {},
-                    color: Colors.purple,
-                    child: Text("Add Transaction"),
-                  ),
-                ],
-              ),
-            ),
-            // TransactionList()
-          ),
+          ),          
         ],
       )
   
