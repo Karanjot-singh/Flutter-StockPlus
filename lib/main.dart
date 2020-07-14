@@ -34,6 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   @override
   String titleInput, amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -54,10 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Card(
             child: Container(
               child: Column(
-                crossAxisAlignment:CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   TextField(
-                    autofocus: true, onChanged:(value) => amountInput=value,
+                    autofocus: true,
+                    onChanged: (value) => titleInput = value,
+                    controller: titleController,
                     decoration: InputDecoration(
                       labelText: "Title",
                     ),
@@ -65,12 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextField(
                     autofocus: true,
                     decoration: InputDecoration(labelText: "Amount"),
+                    controller: amountController,
+                    onChanged: (value) => amountInput = value,
                   ),
                   FlatButton(
                     onPressed: () {},
                     color: Colors.purple,
                     child: Text("Add Transaction"),
-                    
                   ),
                 ],
               ),
