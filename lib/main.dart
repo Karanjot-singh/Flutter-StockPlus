@@ -20,23 +20,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   final List<Transaction> transactions = [
     Transaction(
         id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
     Transaction(
         id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now())
   ];
-  @override
-  String titleInput, amountInput;
+  // String titleInput, amountInput;
   final titleController = TextEditingController();
   final amountController = TextEditingController();
-
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -61,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   TextField(
                     autofocus: true,
-                    onChanged: (value) => titleInput = value,
+                    // onChanged: (value) => titleInput = value,
                     controller: titleController,
                     decoration: InputDecoration(
                       labelText: "Title",
@@ -69,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   TextField(
                     autofocus: true,
-                    decoration: InputDecoration(labelText: "Amount"),
+                    // decoration: InputDecoration(labelText: "Amount"),
                     controller: amountController,
                     onChanged: (value) => amountInput = value,
                   ),
