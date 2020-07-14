@@ -1,4 +1,4 @@
-import 'Transaction.dart';
+import 'models/Transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
                     autofocus: true,
                     // decoration: InputDecoration(labelText: "Amount"),
                     controller: amountController,
-                    onChanged: (value) => amountInput = value,
+                    // onChanged: (value) => amountInput = value,
                   ),
                   FlatButton(
                     onPressed: () {},
