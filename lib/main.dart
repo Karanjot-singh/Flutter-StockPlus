@@ -1,3 +1,4 @@
+import 'package:Xpense/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,34 +20,40 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Xpense"),
-      ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.teal,
-              elevation: 10,
-              child: Text("Daily charts"),
+        appBar: AppBar(
+          title: Text("Xpense"),
+        ),
+        body: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.teal,
+                elevation: 10,
+                child: Text(
+                  "Daily charts",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
             ),
-          ),          
-        ],
-      )
-  
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.red,
-      //   onPressed: () {},
-      //   tooltip: 'Increment',
-      //   child: Icon(Icons.add),
-      // ),
-    );
+            userTransactions(),
+          ],
+        )
+
+        // floatingActionButton: FloatingActionButton(
+        //   backgroundColor: Colors.red,
+        //   onPressed: () {},
+        //   tooltip: 'Increment',
+        //   child: Icon(Icons.add),
+        // ),
+        );
   }
 }
