@@ -1,9 +1,17 @@
 import "package:flutter/material.dart";
+import "../models/Transaction.dart";
+
+
 
 class NewTransaction extends StatelessWidget {
   //For Obtainining user input
   final titleController = TextEditingController();
   final amountController = TextEditingController();
+  void _addTransaction({String addTitle, double addAmount }) {
+      Transaction(
+        id: "id", title: addTitle, amount: addAmount, date: DateTime.now() );
+    return null;
+    }
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -21,14 +29,13 @@ class NewTransaction extends StatelessWidget {
             ),
             TextField(
               autofocus: true,
-              // decoration: InputDecoration(labelText: "Amount"),
               controller: amountController,
               decoration: InputDecoration(
                 labelText: "Amount",
               ),
             ),
             FlatButton(
-              onPressed: () {},
+              onPressed: ()=>_addTransaction(addTitle:titleController.toString(), addAmount: double.parse(amountController.toString()) ),
               color: Colors.purple,
               child: Text(
                 "Add Transaction",

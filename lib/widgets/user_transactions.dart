@@ -2,7 +2,7 @@ import 'package:Xpense/widgets/new_transaction.dart';
 import 'package:flutter/material.dart';
 import "./new_transaction.dart";
 import './transaction_list.dart';
-import'../models/Transaction.dart';
+import '../models/Transaction.dart';
 
 class userTransactions extends StatefulWidget {
   @override
@@ -10,13 +10,19 @@ class userTransactions extends StatefulWidget {
 }
 
 class _userTransactionsState extends State<userTransactions> {
-
   final List<Transaction> _userTransaction = [
     Transaction(
         id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
     Transaction(
         id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now())
   ];
+  void addToList(Transaction tx){
+    _userTransaction.add(tx);
+    setState(() {
+      print("change");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
