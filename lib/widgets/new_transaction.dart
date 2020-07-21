@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "../models/Transaction.dart";
 
 class NewTransaction extends StatelessWidget {
   //For Obtainining user input

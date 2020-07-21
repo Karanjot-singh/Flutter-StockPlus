@@ -7,52 +7,57 @@ class TransactionList extends StatelessWidget {
   TransactionList(this._userTransaction);
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: _userTransaction.map(
-        (tx) {
-          return Card(
-            child: Row(
-              children: <Widget>[
-                Container(
-                  child: Text(
-                    "\₹ " + tx.amount.toString(),
-                    style: TextStyle(
-                      color: Colors.purple[400],
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  padding: EdgeInsets.all(10),
-
-                  // decoration: BoxDecoration(
-                  //     border:
-                  //         Border.all(color: Colors.grey[850], width: 2)),
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    return SingleChildScrollView(
+          child: Container(
+        height: 300,
+        child: Column(
+          children: _userTransaction.map(
+            (tx) {
+              return Card(
+                child: Row(
                   children: <Widget>[
-                    Text(
-                      tx.title,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      DateFormat.yMMMd().format(tx.date),
-                      style: TextStyle(
-                        color: Colors.grey[850],
-                        fontSize: 12,
+                    Container(
+                      child: Text(
+                        "\₹ " + tx.amount.toString(),
+                        style: TextStyle(
+                          color: Colors.purple[400],
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      padding: EdgeInsets.all(10),
+
+                      // decoration: BoxDecoration(
+                      //     border:
+                      //         Border.all(color: Colors.grey[850], width: 2)),
+                      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          tx.title,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          DateFormat.yMMMd().format(tx.date),
+                          style: TextStyle(
+                            color: Colors.grey[850],
+                            fontSize: 12,
+                          ),
+                        )
+                      ],
                     )
                   ],
-                )
-              ],
-            ),
-          );
-        },
-      ).toList(),
+                ),
+              );
+            },
+          ).toList(),
+        ),
+      ),
     );
   }
 }
