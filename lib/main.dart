@@ -26,26 +26,28 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Xpense"),
         ),
-        body: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.teal,
-                elevation: 10,
-                child: Text(
-                  "Daily charts",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
+        body: SingleChildScrollView(
+                  child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                child: Card(
+                  color: Colors.teal,
+                  elevation: 10,
+                  child: Text(
+                    "Daily charts",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
                   ),
                 ),
               ),
-            ),
-            userTransactions(),
-          ],
+              userTransactions(),
+            ],
+          ),
         )
 
         // floatingActionButton: FloatingActionButton(
