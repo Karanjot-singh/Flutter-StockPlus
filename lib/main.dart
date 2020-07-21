@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
           title: Text("Xpense"),
         ),
         body: SingleChildScrollView(
-                  child: Column(
+          child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
