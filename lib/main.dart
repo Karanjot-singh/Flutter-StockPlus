@@ -23,39 +23,46 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Xpense"),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                width: double.infinity,
-                child: Card(
-                  color: Colors.teal,
-                  elevation: 10,
-                  child: Text(
-                    "Daily charts",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                    ),
+      appBar: AppBar(
+        title: Text("Xpense"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add_circle_outline),
+            onPressed: null,
+          ),
+        IconButton(
+            icon: Icon(Icons.info),
+            onPressed: null,
+          ),],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.teal,
+                elevation: 10,
+                child: Text(
+                  "Daily charts",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
                   ),
                 ),
               ),
-              userTransactions(),
-            ],
-          ),
-        )
-
-        // floatingActionButton: FloatingActionButton(
-        //   backgroundColor: Colors.red,
-        //   onPressed: () {},
-        //   tooltip: 'Increment',
-        //   child: Icon(Icons.add),
-        // ),
-        );
+            ),
+            userTransactions(),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.teal,
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }

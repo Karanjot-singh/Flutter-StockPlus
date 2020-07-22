@@ -30,6 +30,7 @@ class NewTransaction extends StatelessWidget {
               autofocus: true,
               // onChanged: (value) => titleInput = value,
               controller: titleController,
+              onSubmitted: (_)=>submitHandler(),
               decoration: InputDecoration(
                 labelText: "Title",
               ),
