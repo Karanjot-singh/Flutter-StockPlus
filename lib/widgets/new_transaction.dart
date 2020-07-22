@@ -6,6 +6,13 @@ class NewTransaction extends StatelessWidget {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
   NewTransaction(this.addTx);
+  void submitHandler() => {
+                addTx(
+                    titleController.text,
+                    double.parse(
+                      amountController.text,
+                    ))
+              };
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -23,19 +30,15 @@ class NewTransaction extends StatelessWidget {
             ),
             TextField(
               autofocus: true,
+              keyboardType: TextInputType.numberWithOptions(decimal:true),//for ios
               controller: amountController,
+              onSubmitted: (_)=>submitHandler, //aarg not used
               decoration: InputDecoration(
                 labelText: "Amount",
               ),
             ),
             FlatButton(
-              onPressed: () => {
-                addTx(
-                    titleController.text,
-                    double.parse(
-                      amountController.text,
-                    ))
-              },
+              onPressed: submitHandler,
               color: Colors.purple,
               child: Text(
                 "Add Transaction",
