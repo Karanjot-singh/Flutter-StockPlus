@@ -39,7 +39,7 @@ class NewTransaction extends StatelessWidget {
               keyboardType:
                   TextInputType.numberWithOptions(decimal: true), //for ios
               controller: amountController,
-              onSubmitted: (_) => submitHandler, //arg not used
+              onSubmitted: (_) => submitHandler(), //arg not used
               decoration: InputDecoration(
                 labelText: "Amount",
               ),
