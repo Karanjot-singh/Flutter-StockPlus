@@ -27,13 +27,20 @@ class MyHomePage extends StatelessWidget {
         title: Text("Xpense"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.add_circle_outline),
+            icon: Icon(
+              Icons.add_circle_outline,
+              color: Colors.white,
+            ),
             onPressed: null,
           ),
-        IconButton(
-            icon: Icon(Icons.info),
+          IconButton(
+            icon: Icon(
+              Icons.info,
+              color: Colors.white,
+            ),
             onPressed: null,
-          ),],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
