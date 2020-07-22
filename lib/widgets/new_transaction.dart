@@ -5,14 +5,20 @@ class NewTransaction extends StatelessWidget {
   final Function addTx;
   final titleController = TextEditingController();
   final amountController = TextEditingController();
+
   NewTransaction(this.addTx);
-  void submitHandler() => {
-                addTx(
-                    titleController.text,
-                    double.parse(
-                      amountController.text,
-                    ))
-              };
+
+  void submitHandler() {
+    final titleText = titleController.text;
+    final amountText = double.parse(amountController.text);
+    if(titleText.isEmpty || amountText<=0)
+      return;
+    addTx(
+      titleText,
+      amountText,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -30,9 +36,10 @@ class NewTransaction extends StatelessWidget {
             ),
             TextField(
               autofocus: true,
-              keyboardType: TextInputType.numberWithOptions(decimal:true),//for ios
+              keyboardType:
+                  TextInputType.numberWithOptions(decimal: true), //for ios
               controller: amountController,
-              onSubmitted: (_)=>submitHandler, //aarg not used
+              onSubmitted: (_) => submitHandler, //arg not used
               decoration: InputDecoration(
                 labelText: "Amount",
               ),
