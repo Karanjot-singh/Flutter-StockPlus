@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Xpense',
       theme: ThemeData(
         primarySwatch: Colors.teal,
+        accentColor: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -86,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               child: Card(
-                color: Colors.teal,
+                color: Theme.of(context).primaryColor,
                 elevation: 10,
                 child: Text(
                   "Daily charts",
@@ -102,7 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purple[400],
         onPressed: (){_startAddTx(context);},
         child: Icon(Icons.add),
       ),

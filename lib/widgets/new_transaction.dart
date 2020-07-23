@@ -25,6 +25,8 @@ class _NewTransactionState extends State<NewTransaction> {
       titleText,
       amountText,
     );
+    //to pop out modal sheet after entry
+    Navigator.of(context).pop();
   }
 
   @override
