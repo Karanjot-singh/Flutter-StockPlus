@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.purple[400],
         onPressed: (){_startAddTx(context);},
         child: Icon(Icons.add),
       ),
