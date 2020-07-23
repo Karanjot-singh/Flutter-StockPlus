@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _startAddTx(BuildContext ctx) {
+    // for the bottom overlay to add transaction
     showModalBottomSheet(
       context: ctx,
       builder: (bctx) {
