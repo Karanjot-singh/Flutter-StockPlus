@@ -14,8 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Xpense',
       theme: ThemeData(
+        fontFamily: '',
         primarySwatch: Colors.teal,
         accentColor: Colors.purple,
+        appBarTheme:AppBarTheme(
+        textTheme: ThemeData.light().textTheme.copyWith(
+              // title deprecated to headline6
+              headline6: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 20,
+                // fontWeight: FontWeight.bold,
+              ),
+            ),),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -69,7 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.add_circle_outline,
               color: Colors.white,
             ),
-            onPressed: (){_startAddTx(context);},
+            onPressed: () {
+              _startAddTx(context);
+            },
           ),
           IconButton(
             icon: Icon(
@@ -104,7 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){_startAddTx(context);},
+        onPressed: () {
+          _startAddTx(context);
+        },
         child: Icon(Icons.add),
       ),
     );
