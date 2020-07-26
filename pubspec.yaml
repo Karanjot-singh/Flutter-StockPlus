@@ -64,13 +64,13 @@ flutter:
   fonts:
     - family: Montserrat
       fonts:
-        - asset: fonts/Monteserrat-Regular.ttf
-        - asset: fonts/Monteserrat-SemiBold.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Monteserrat-SemiBold.ttf
           weight: 600
     - family: OpenSans
       fonts:
-        - asset: fonts/OpenSans-Regular.ttf
-        - asset: fonts/OpenSans-SemiBold.ttf
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-SemiBold.ttf
           weight: 600
   #   - family: Trajan Pro
   #     fonts:
