@@ -17,15 +17,16 @@ class MyApp extends StatelessWidget {
         fontFamily: '',
         primarySwatch: Colors.teal,
         accentColor: Colors.purple,
-        appBarTheme:AppBarTheme(
-        textTheme: ThemeData.light().textTheme.copyWith(
-              // title deprecated to headline6
-              headline6: TextStyle(
-                fontFamily: 'OpenSans',
-                fontSize: 20,
-                // fontWeight: FontWeight.bold,
+        appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+                // title deprecated to headline6
+                headline6: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                  // fontWeight: FontWeight.bold,
+                ),
               ),
-            ),),
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -40,10 +41,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransaction = [
-    Transaction(
-        id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
-    Transaction(
-        id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now())
+    // Transaction(
+      //     id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
+      // Transaction(
+      // id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now(),
+    // )
   ];
   void _addTransaction(String addTitle, double addAmount) {
     Transaction(
