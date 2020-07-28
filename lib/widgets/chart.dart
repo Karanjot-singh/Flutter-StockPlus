@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import '';
+import '../models/Transaction.dart';
+import'package:intl/';
 
 class Chart extends StatelessWidget {
-  List <Map<String,Object>> get weeklyTx{
-    return List.generate(7, (){})
+  final List<Transaction> recentTransacitons;
+  Chart(this.recentTransacitons);
+
+  List <Map<String,Object>> get weeklyTx {
+    return List.generate(7, (index){return {'day':};});
   };
   @override
   Widget build(BuildContext context) {
