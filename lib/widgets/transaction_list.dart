@@ -40,7 +40,7 @@ class TransactionList extends StatelessWidget {
                           "\₹ " +
                               _userTransaction[index].amount.toStringAsFixed(2),
                           style: TextStyle(
-                            color: Theme.of(context).accentColor,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),

@@ -116,11 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               width: double.infinity,
-              child: Card(
-                color: Theme.of(context).primaryColor,
-                elevation: 10,
-                child: Chart(_recentTransaction),
-              ),
+              child: Chart(_recentTransaction),
             ),
             TransactionList(_userTransaction),
           ],

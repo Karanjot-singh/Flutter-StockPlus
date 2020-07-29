@@ -1,3 +1,4 @@
+import 'package:Xpense/widgets/chart_bar.dart';
 import 'package:flutter/material.dart';
 import '../models/Transaction.dart';
 import 'package:intl/intl.dart';
@@ -35,11 +36,13 @@ class Chart extends StatelessWidget {
     print(weeklyTx);
     return Card(
       child: Row(
-          children: weeklyTx.map(
-        (data) {
-          return Text(data['day']);
-        },
-      ).toList()),
+        children: weeklyTx.map(
+          (data) {
+            return Chartbar(data['day'], data['amount'], 0.5);
+            // return Text(data['day']);
+          }
+        ).toList(),
+      ),
       elevation: 6,
       margin: EdgeInsets.all(20),
     );
