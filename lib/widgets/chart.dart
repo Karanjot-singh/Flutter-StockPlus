@@ -35,8 +35,11 @@ class Chart extends StatelessWidget {
     print(weeklyTx);
     return Card(
       child: Row(
-        children: <Widget>[],
-      ),
+          children: weeklyTx.map(
+        (data) {
+          return Text(data['day']);
+        },
+      ).toList()),
       elevation: 6,
       margin: EdgeInsets.all(20),
     );
