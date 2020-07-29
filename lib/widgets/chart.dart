@@ -19,6 +19,8 @@ class Chart extends StatelessWidget {
             amountSum++;
           }
         }
+        print(DateFormat.E().format(weekday));
+        print(amountSum);
 
         return {
           'day': DateFormat.E().format(weekday),

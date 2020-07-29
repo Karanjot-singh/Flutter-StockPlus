@@ -3,6 +3,7 @@ import 'package:Xpense/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 import './models/Transaction.dart';
 import './widgets/new_transaction.dart';
+import './widgets/chart.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,11 +43,25 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransaction = [
     // Transaction(
-      //     id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
-      // Transaction(
-      // id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now(),
+    //     id: "t1", title: "Starbucks Coffee", amount: 250, date: DateTime.now()),
+    // Transaction(
+    // id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now(),
     // )
   ];
+  List<Transaction> get _recentTransaction {
+    return _userTransaction.where(
+      (tx) {
+        return (tx.date.isAfter(
+          DateTime.now().subtract(
+            Duration(
+              days: 7,
+            ),
+          ),
+        ));
+      },
+    );
+  }
+
   void _addTransaction(String addTitle, double addAmount) {
     Transaction(
         id: "id", title: addTitle, amount: addAmount, date: DateTime.now());
@@ -104,13 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Card(
                 color: Theme.of(context).primaryColor,
                 elevation: 10,
-                child: Text(
-                  "Daily charts",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                  ),
-                ),
+                child: Chart(_recentTransaction),
               ),
             ),
             TransactionList(_userTransaction),
