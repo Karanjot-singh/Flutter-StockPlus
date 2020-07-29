@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ));
       },
-    );
+    ).toList();
   }
 
   void _addTransaction(String addTitle, double addAmount) {

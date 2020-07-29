@@ -32,6 +32,7 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(weeklyTx);
     return Card(
       child: Row(
         children: <Widget>[],
