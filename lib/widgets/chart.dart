@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransacitons;
+  //recentTransactions is a list of all transactions upto 7 days ago
   Chart(this.recentTransacitons);
 
   List<Map<String, Object>> get weeklyTx {
@@ -36,12 +37,12 @@ class Chart extends StatelessWidget {
     print(weeklyTx);
     return Card(
       child: Row(
-        children: weeklyTx.map(
-          (data) {
-            return Chartbar(data['day'], data['amount'], 0.5);
-            // return Text(data['day']);
-          }
-        ).toList(),
+        children: 
+         //to turn a list into list of widgets, data is each element of initial list
+         weeklyTx.map((data) {
+          return Chartbar(data['day'], data['amount'], 0.5);
+          // return Text(data['day']);
+        }).toList(),
       ),
       elevation: 6,
       margin: EdgeInsets.all(20),

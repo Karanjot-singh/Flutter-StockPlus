@@ -5,6 +5,7 @@ import './models/Transaction.dart';
 import './widgets/new_transaction.dart';
 import './widgets/chart.dart';
 
+//39
 void main() {
   runApp(MyApp());
 }
@@ -51,13 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Transaction> get _recentTransaction {
     return _userTransaction.where(
       (tx) {
-        return (tx.date.isAfter(
+        return tx.date.isAfter(
           DateTime.now().subtract(
             Duration(
               days: 7,
             ),
           ),
-        ));
+        );
       },
     ).toList();
   }
