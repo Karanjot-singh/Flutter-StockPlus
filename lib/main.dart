@@ -49,6 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // id: "t2", title: "New Shoes", amount: 3000, date: DateTime.now(),
     // )
   ];
+
+  // A getter function to get the list of entries from 7 days before the current date
   List<Transaction> get _recentTransaction {
     return _userTransaction.where(
       (tx) {
