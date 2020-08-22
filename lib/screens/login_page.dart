@@ -1,3 +1,4 @@
+import 'package:Xpense/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -20,7 +21,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
-
+  String username;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -44,7 +45,10 @@ class _BodyState extends State<Body> {
                       icon: Icon(Icons.check_circle_outline),
                       splashColor: Colors.blue,
                       tooltip: "Enter",
-                      onPressed: () {},
+                      onPressed: () {
+                        this.username = usernameController.text;
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
+                      },
                     ),
                   )),
               TextField(
