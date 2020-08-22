@@ -1,5 +1,6 @@
+import 'package:Xpense/screens/login_page.dart';
 import 'package:flutter/material.dart';
-import './screens/home_screen.dart';
+// import './screens/home_screen.dart';
 
 //39
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: LoginPage(),
     );
   }
 }
