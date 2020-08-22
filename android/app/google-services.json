@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "563384126143",
+    "firebase_url": "https://xpense-6137b.firebaseio.com",
+    "project_id": "xpense-6137b",
+    "storage_bucket": "xpense-6137b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563384126143:android:ec8826291d10c4fc2d940a",
+        "android_client_info": {
+          "package_name": "com.example.Xpense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563384126143-ecm9b5f6qj2bf6vfm7cl97kp857eso2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Xpense",
+            "certificate_hash": "483f6f91c8a060805cae4597b4278af8be2b387b"
+          }
+        },
+        {
+          "client_id": "563384126143-h1e11j9r1vc8n3rf0id1mqk4k56rrn0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN03vrNBJBM_IA_eAgLmCmPXiAEl54Xhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563384126143-h1e11j9r1vc8n3rf0id1mqk4k56rrn0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
