@@ -1,5 +1,7 @@
 import 'package:Xpense/screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../auth.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -22,6 +24,22 @@ class _BodyState extends State<Body> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   String username;
+
+  //firebase_login
+  FirebaseUser user;
+
+  void signInHandler() {
+    signInWithGoogle().then((value) => () {
+          this.user = user;
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MyHomePage()));
+        });
+  }
+
+  Widget googleLoginButton() {
+    return OutlineButton(onPressed: signInHandler);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -47,7 +65,10 @@ class _BodyState extends State<Body> {
                       tooltip: "Enter",
                       onPressed: () {
                         this.username = usernameController.text;
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyHomePage()));
                       },
                     ),
                   )),
