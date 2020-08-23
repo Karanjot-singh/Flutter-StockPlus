@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #firebase_login
+  firebase_auth:
+  google_sign _in:
   intl: ^0.16.1
 
 
