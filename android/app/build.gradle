@@ -42,7 +42,10 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         //firebase_setup
         applicationId "com.example.Xpense"
-        minSdkVersion 16
+        //firebase_login
+        // minSdkVersion 16
+        // minSdkVersion 21
+
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
