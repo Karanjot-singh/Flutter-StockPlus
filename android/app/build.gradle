@@ -44,7 +44,7 @@ android {
         applicationId "com.example.Xpense"
         //firebase_login
         // minSdkVersion 16
-        // minSdkVersion 21
+        minSdkVersion 21
 
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()

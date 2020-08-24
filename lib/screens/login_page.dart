@@ -27,7 +27,19 @@ class _BodyState extends State<Body> {
 
   //firebase_login
   FirebaseUser user;
-
+  @override
+  void initState() {
+    //first time after restart
+    super.initState();
+    signOutGoogle();
+  }
+  void textBoxHandler(){
+                      this.username = usernameController.text;
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyHomePage()));
+                    }
   void signInHandler() {
     //the return value of sign in with google comes in the user field
     signInWithGoogle().then((user) => () {
@@ -69,6 +81,7 @@ class _BodyState extends State<Body> {
     );
   }
 
+  // Widge
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -77,33 +90,14 @@ class _BodyState extends State<Body> {
           padding: EdgeInsets.all(10),
           child: Column(
             children: [
-              TextField(
-                  controller: usernameController,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.person),
-                    labelText: "Username",
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.teal,
-                        width: 5,
-                      ),
-                    ),
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.check_circle_outline),
-                      splashColor: Colors.blue,
-                      tooltip: "Enter",
-                      onPressed: () {
-                        this.username = usernameController.text;
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MyHomePage()));
-                      },
-                    ),
-                  )),
+              
               TextField(
                 controller: passwordController,
               ),
+              SizedBox(
+                height: 35,
+              ),
+              googleLoginButton(),
             ],
           ),
         ));
