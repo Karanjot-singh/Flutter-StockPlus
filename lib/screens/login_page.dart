@@ -7,7 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(title: Text("Sign In",style: TextStyle(fontSize: 20),),
         elevation: 0,
       ),
       body: Body(),
@@ -33,13 +33,13 @@ class _BodyState extends State<Body> {
     super.initState();
     signOutGoogle();
   }
-  void textBoxHandler(){
-                      this.username = usernameController.text;
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MyHomePage()));
-                    }
+
+  void textBoxHandler() {
+    this.username = usernameController.text;
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => MyHomePage()));
+  }
+
   void signInHandler() {
     //the return value of sign in with google comes in the user field
     signInWithGoogle().then((user) => () {
@@ -81,7 +81,28 @@ class _BodyState extends State<Body> {
     );
   }
 
-  // Widge
+  Widget signInTextBox(String username, int type) {
+    return TextField(
+      controller: usernameController,
+      decoration: InputDecoration(
+        prefixIcon: (type == 0) ? Icon(Icons.person) : Icon(Icons.lock),
+        labelText: username,
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.teal,
+            width: 5,
+          ),
+        ),
+        suffixIcon: IconButton(
+          icon: Icon(Icons.check_circle_outline),
+          splashColor: Colors.blue,
+          tooltip: "Enter",
+          onPressed: textBoxHandler,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -90,10 +111,12 @@ class _BodyState extends State<Body> {
           padding: EdgeInsets.all(10),
           child: Column(
             children: [
-              
-              TextField(
-                controller: passwordController,
+              signInTextBox("Username", 0),
+
+              SizedBox(
+                height: 15,
               ),
+              signInTextBox("Password", 1),
               SizedBox(
                 height: 35,
               ),
