@@ -29,15 +29,32 @@ class _BodyState extends State<Body> {
   FirebaseUser user;
 
   void signInHandler() {
-    signInWithGoogle().then((value) => () {
+    //the return value of sign in with google comes in the user field
+    signInWithGoogle().then((user) => () {
           this.user = user;
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MyHomePage()));
+              context,
+              MaterialPageRoute(
+                  builder: (context) => MyHomePage())); //user.displayname
         });
   }
 
   Widget googleLoginButton() {
-    return OutlineButton(onPressed: signInHandler);
+    return OutlineButton(
+      onPressed: signInHandler,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(45),
+      ),
+      splashColor: Colors.grey,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+        ),
+      ),
+    );
   }
 
   @override
