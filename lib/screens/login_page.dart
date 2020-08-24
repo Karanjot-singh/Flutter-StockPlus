@@ -52,6 +52,18 @@ class _BodyState extends State<Body> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
+          children: [
+            Image(
+              image: AssetImage('assets/images/google_logo.png'),
+              height: 25,
+            ),
+            Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
+                  "Sign in with Google",
+                  style: TextStyle(color: Colors.grey, fontSize: 18),
+                ))
+          ],
         ),
       ),
     );
