@@ -88,6 +88,7 @@ class _BodyState extends State<Body> {
   Widget signInTextBox(String username, int type) {
     return TextField(
       controller: (type == 0) ? usernameController: passwordController,
+      obscureText: (type == 0) ? false : true,
       decoration: InputDecoration(
         prefixIcon: (type == 0) ? Icon(Icons.person) : Icon(Icons.lock),
         labelText: username,
