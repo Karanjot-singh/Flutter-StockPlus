@@ -39,6 +39,10 @@ class _BodyState extends State<Body> {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => MyHomePage()));
   }
+  void textBoxHandler1() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => MyHomePage()));
+  }
 
   void signInHandler() {
     //the return value of sign in with google comes in the user field
@@ -83,7 +87,7 @@ class _BodyState extends State<Body> {
 
   Widget signInTextBox(String username, int type) {
     return TextField(
-      controller: usernameController,
+      controller: (type == 0) ? usernameController: passwordController,
       decoration: InputDecoration(
         prefixIcon: (type == 0) ? Icon(Icons.person) : Icon(Icons.lock),
         labelText: username,
@@ -97,7 +101,7 @@ class _BodyState extends State<Body> {
           icon: Icon(Icons.check_circle_outline),
           splashColor: Colors.blue,
           tooltip: "Enter",
-          onPressed: textBoxHandler,
+          onPressed: (type == 0) ? textBoxHandler : textBoxHandler1,
         ),
       ),
     );
