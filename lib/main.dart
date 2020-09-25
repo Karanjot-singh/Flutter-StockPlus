@@ -1,3 +1,4 @@
+import 'package:Xpense/components/bottom_nav_bar.dart';
 import 'package:Xpense/screens/login_page.dart';
 import 'package:flutter/material.dart';
 // import './screens/home_screen.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: NavBar(),
+      // LoginPage(),
     );
   }
 }
