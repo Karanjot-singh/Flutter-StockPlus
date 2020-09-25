@@ -24,13 +24,15 @@ class BottomNavBar extends State<NavBar> {
           Center(
             child: Icon(
               Icons.settings,
-              color: Colors.purple
+              color: Colors.black
             ),
           ),
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.purple[800],
+        itemOutlineColor: Colors.teal,
+        itemBackgroudnColor: Colors.teal,
         items: [
           CustomBottomNavigationBarItem(
             icon: Icons.account_circle,
