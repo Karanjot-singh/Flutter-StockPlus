@@ -23,21 +23,22 @@ class BottomNavBar extends State<NavBar> {
           MyHomePage(),
           Center(
             child: Icon(
-              Icons.near_me,
-              color: Color(0XFF003051),
+              Icons.settings,
+              color: Colors.purple
             ),
           ),
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(
+        backgroundColor: Colors.purple,
         items: [
           CustomBottomNavigationBarItem(
-            icon: Icons.map,
-            title: "Map",
+            icon: Icons.account_circle,
+            title: "Login",
           ),
           CustomBottomNavigationBarItem(
-            icon: Icons.near_me,
-            title: "Directions",
+            icon: Icons.account_balance_wallet,
+            title: "My Wallet",
           ),
           CustomBottomNavigationBarItem(
             icon: Icons.settings,
@@ -47,7 +48,7 @@ class BottomNavBar extends State<NavBar> {
         onTap: (index) {
           _pageController.animateToPage(index,
               curve: Curves.fastLinearToSlowEaseIn,
-              duration: Duration(milliseconds: 600));
+              duration: Duration(milliseconds: 400));
         },
       ),
     );
