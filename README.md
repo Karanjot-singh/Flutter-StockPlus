@@ -1,6 +1,6 @@
-# Xpense
+# StockPlus
 
-A new Flutter project to track and manage personal Expenses.
+A new Flutter project for a unified stock portfolio management service
 
 ## Getting Started
 
